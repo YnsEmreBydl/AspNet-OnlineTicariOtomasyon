@@ -1,0 +1,45 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "faturaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>FATURA EKLE</h1>
+
+<form method="post">
+    @Html.Label("SIRA NO")
+    @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("SERİ NO")
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("VERGİ DAİRESİ")
+    @Html.TextBoxFor(x => x.FaturaVergiDairesi, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TESLİM ALAN")
+    @Html.TextBoxFor(x => x.FaturaTeslimAlan, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TESLİM EDEN")
+    @Html.TextBoxFor(x => x.FaturaTeslimEden, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.FaturaTarih, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("SAAT")
+    @Html.TextBoxFor(x => x.FaturaSaat, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TOPLAM TUTAR")
+    @Html.TextBoxFor(x => x.FaturaToplam, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

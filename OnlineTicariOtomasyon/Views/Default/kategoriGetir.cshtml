@@ -1,0 +1,20 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Kategori
+@{
+    ViewBag.Title = "kategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>KATEGORİ GÜNCELLEME SAYFASI</h1>
+@using (Html.BeginForm("kategoriGuncelle", "Default", FormMethod.Post))
+{
+    <form method="post">
+    
+        @Html.Label("KATEGORİ ADI")
+        @Html.TextBoxFor(x => x.Kategori_ad, new { @class = "form-control" })
+        @Html.HiddenFor(x=>x.KategoriID)
+        <br />
+
+        <button class="btn btn-warning">Güncelle</button>
+    </form>
+}
+
+

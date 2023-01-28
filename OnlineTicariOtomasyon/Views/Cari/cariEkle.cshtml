@@ -1,0 +1,36 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "cariEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>MÜŞTEİR EKLE</h1>
+
+
+<form method="post">
+
+
+    @Html.Label("AD")
+    @Html.TextBoxFor(x => x.Cari_ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Cari_ad, "", new { @style = "color:red" })
+    <br />
+
+    @Html.Label("SOYAD")
+    @Html.TextBoxFor(x => x.Cari_soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Cari_soyad, "", new { @style = "color:red" })
+    <br />
+
+    @Html.Label("İLÇE")
+    @Html.TextBoxFor(x => x.Cari_sehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Cari_sehir, "", new { @style = "color:red" })
+    <br />
+
+    @Html.Label("MAİL")
+    @Html.TextBoxFor(x => x.Cari_mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Cari_mail, "", new { @style = "color:red" })
+    <br />
+
+
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

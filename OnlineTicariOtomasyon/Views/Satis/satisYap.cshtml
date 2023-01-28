@@ -1,0 +1,42 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "satisYap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>YENİ SATIŞ YAP</h1>
+
+<form method="post">
+    @Html.Label("ÜRÜN SEÇ")
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.urn, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("MÜŞTERİ SEÇ")
+    @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.mst, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("PERSONEL SEÇ")
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.per, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("FİYAT")
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("ADET")
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TOPLAM TUTAR")
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+
+
+
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

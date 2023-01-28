@@ -1,0 +1,36 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "personelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>PERSONEL GÜNCELLEME SAYFASI</h1>
+
+@using (Html.BeginForm("personelGuncelle", "Personel", FormMethod.Post))
+{
+<form method="post">
+
+    @Html.HiddenFor(x => x.PersonelID)
+    @Html.Label("DEPARTMAN SEÇ")
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.person, new { @class = "form-control" })
+    <br />
+    @Html.Label("AD")
+    @Html.TextBoxFor(x => x.Personel_ad, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("SOYAD")
+    @Html.TextBoxFor(x => x.Personel_soyad, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("İLÇE")
+    @Html.TextBoxFor(x => x.Personel_resim, new { @class = "form-control" })
+    <br />
+
+
+
+
+
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+
+}

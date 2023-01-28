@@ -1,0 +1,56 @@
+﻿@model OnlineTicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "urunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ÜRÜN GÜNCELLEME SAYFASI</h2>
+
+@using (Html.BeginForm("urunGuncelle", "Urun", FormMethod.Post))
+{
+<form method="post">
+    @Html.HiddenFor(x => x.UrunID)
+    @Html.Label("KATEGORİ SEÇ")
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("ÜRÜN ADI")
+    @Html.TextBoxFor(x => x.Urun_ad, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x => x.Urun_Marka, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("ÜRÜN RESMİ")
+    @Html.TextBoxFor(x => x.Urun_gorsel, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("ALIŞ FİYATI")
+    @Html.TextBoxFor(x => x.Urun_alis_fiyat, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("SATIŞ FİYATI")
+    @Html.TextBoxFor(x => x.Urun_satis_fiyat, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("DURUM")
+    @Html.DropDownListFor(x => x.Urun_durum, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+
+    <br />
+
+    @Html.Label("STOK")
+    @Html.TextBoxFor(x => x.Urun_stok, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+}

@@ -1,0 +1,53 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>ÜRÜNLER</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİSİ</th>
+        <th>ÜRÜN AD</th>
+        <th>ÜRÜN RESMİ</th>
+        <th>MARKA</th>
+        <th>ALIŞ FİYATI</th>
+        <th>SATIŞ FİYATI</th>
+        <th>DURUM</th>
+        <th>STOK</th>
+        <th>DÜZENLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr style="text-align:center;">
+    <td>@item.UrunID</td>
+    <td>@item.Kategori.Kategori_ad</td>
+    <td>@item.Urun_ad</td>
+    <td>@item.Urun_gorsel</td>
+    <td>@item.Urun_Marka</td>
+    <td>@item.Urun_alis_fiyat</td>
+    <td>@item.Urun_satis_fiyat</td>
+    @if (item.Urun_durum == true)
+    {
+        <td class="btn btn-success" style="margin-top:5px">Mevcut</td>
+    }
+    else
+    {
+        <td class="btn btn-danger" style="margin-top:5px">Stokta Yok</td>
+    }
+
+    <td>@item.Urun_stok <span> Adet</span></td>
+
+    <td><a href="/Urun/urunGetir/@item.UrunID" class="btn btn-warning">Düzenle</a></td>
+    <td><a href="/Urun/urunSil/@item.UrunID" class="btn btn-danger">Sil</a></td>
+</tr>
+    }
+</table>
+<a href="/Urun/urunEkle/" class="btn btn-primary">Yeni Ekle</a>
+
+
+

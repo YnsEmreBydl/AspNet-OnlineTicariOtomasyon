@@ -1,0 +1,28 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>KATEGORİLER</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ AD</th>
+        <th>DÜZENLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.KategoriID</td>
+    <td>@item.Kategori_ad</td>
+    <td><a href="/Default/kategoriGetir/@item.KategoriID" class="btn btn-warning">Düzenle</a></td>
+    <td><a href="/Default/kategoriSil/@item.KategoriID" class="btn btn-danger">Sil</a></td>
+</tr>
+    }
+</table>
+
+<a href="/Default/kategoriEkle/" class="btn btn-primary">Yeni Ekle</a>
+

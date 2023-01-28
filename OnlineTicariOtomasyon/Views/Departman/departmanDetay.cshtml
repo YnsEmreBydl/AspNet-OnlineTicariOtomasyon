@@ -1,0 +1,33 @@
+﻿@using OnlineTicariOtomasyon.Models.Siniflar
+@model List<Personel>
+@{
+    ViewBag.Title = "departmanDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>DEPARTMAN DETAY SAYFASI </h1> <span>DEPARTMAN: @ViewBag.dgr</span>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>RESİM</th>
+        <th>SATIŞLAR</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelID</td>
+            <td>@item.Personel_ad</td>
+            <td>@item.Personel_soyad</td>
+            <td>@item.Personel_resim</td>
+            <td><a href="/Departman/departmanSatis/@item.PersonelID" class="btn btn-success">SATIŞLAR</a></td>
+         
+        </tr>
+    }
+</table>
+<a href="/Departman/departmanEkle/" class="btn btn-primary">Yeni Ekle</a>
